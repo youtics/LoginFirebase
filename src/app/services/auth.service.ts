@@ -27,5 +27,17 @@ export class AuthService {
     return this.auth.createUserWithEmailAndPassword(user, pass);
   }
 
+  VerificarCorreo()
+  {
+    this.auth.currentUser.then(
+      user=>{
+        if(user!=null)
+        {
+          user.sendEmailVerification();
+        }
+      }
+    )
+  }
+
 
 }
