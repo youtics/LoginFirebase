@@ -4,6 +4,7 @@
     <input type="password" placeholder="Contraseña" #pass>
 
     <button  (click)="login(user.value, pass.value)">Entrar</button>
+    <button  (click)="serviceLogin.googleAuth()">Iniciar con Google</button>
     <button  (click)="Registrar(user.value, pass.value)">Registrar</button>
     <button  (click)="serviceLogin.VerificarCorreo()">Verificar Email</button>
     <button  (click)="serviceLogin.LogOut()">Salir</button>

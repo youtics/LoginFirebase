@@ -1,6 +1,8 @@
 import { AngularFireAuth} from '@angular/fire/compat/auth';
 import { Injectable } from '@angular/core';
 
+import firebase from '@firebase/app-compat';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,6 +39,11 @@ export class AuthService {
         }
       }
     )
+  }
+
+  googleAuth(){
+    /**Esta funcion recibe como parametro un proveedor de correo */
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider);
   }
 
 
