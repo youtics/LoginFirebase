@@ -1,0 +1,8 @@
+<div>
+    <h1>Login</h1>
+    <input type="text" placeholder="Usuario" #user>   
+    <input type="password" placeholder="Contraseña" #pass>
+
+    <button  (click)="login(user.value, pass.value)">Entrar</button>
+    <button  (click)="serviceLogin.LogOut()">Salir</button>
+</div>
