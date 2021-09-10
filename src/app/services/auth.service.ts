@@ -22,4 +22,10 @@ export class AuthService {
     return this.auth.signOut();
   }
 
+  Registrar(user: string, pass: string)
+  {
+    return this.auth.createUserWithEmailAndPassword(user, pass);
+  }
+
+
 }

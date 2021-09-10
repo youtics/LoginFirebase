@@ -21,6 +21,14 @@ export class LoginComponent implements OnInit {
       alert(e.message);
     }
   }
+  async Registrar(user:string, pass: string){
+    
+    try{
+      this.serviceLogin.Registrar(user, pass);
+    }catch(e:any){
+      alert(e.message);
+    }
+  }
 
 
 }

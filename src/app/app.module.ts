@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AngularFireModule } from '@angular/fire/compat';
-//import { AngularFireAuthModule } from "@angular/fire/auth/auth";
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
