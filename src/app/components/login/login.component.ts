@@ -23,6 +23,15 @@ export class LoginComponent implements OnInit {
     
     try{
       this.serviceLogin.Login(user, pass);
+      console.log(user);
+      this.serviceLogin.auth.authState.subscribe(user=> 
+          {
+            if(user?.emailVerified===true)
+            {
+              alert('Good......')
+            }
+          }
+        )
     }catch(e:any){
       alert(e.message);
     }
@@ -31,6 +40,21 @@ export class LoginComponent implements OnInit {
     
     try{
       this.serviceLogin.Registrar(user, pass);
+      this.serviceLogin.auth.authState.subscribe(user=> 
+          {
+            if(user)
+            {
+              this.serviceLogin.auth.currentUser.then(
+                user=>{
+                  if(user!=null)
+                  {
+                    user.sendEmailVerification();
+                  }
+                }
+              )
+            }    
+          }
+        )
     }catch(e:any){
       alert(e.message);
     }
