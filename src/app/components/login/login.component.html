@@ -2,10 +2,24 @@
     <h1>Login</h1>
     <input type="text" placeholder="Usuario" #user>   
     <input type="password" placeholder="Contraseña" #pass>
+    
+
 
     <button  (click)="login(user.value, pass.value)">Entrar</button>
     <button  (click)="serviceLogin.googleAuth()">Iniciar con Google</button>
     <button  (click)="Registrar(user.value, pass.value)">Registrar</button>
     <button  (click)="serviceLogin.VerificarCorreo()">Verificar Email</button>
     <button  (click)="serviceLogin.LogOut()">Salir</button>
+
+    <input type="text" placeholder="Telefono Movil" #movil> 
+
+    <button  (click)="enviarCaptcha(movil.value)">Enviar Codigo</button>  
+
+    <input type="text" placeholder="Ingresar el Código" #codigo>
+
+    <button  (click)="serviceLogin.verificarCodigo(codigo.value)">Verificar Codigo</button> 
+
+    <div id="recapcha-container"></div>
+
+    
 </div>
